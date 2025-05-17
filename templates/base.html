@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}HealthSense - Intelligent Health Analysis{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            200: '#bae2fd',
+                            300: '#7ccdfb',
+                            400: '#36b3f6',
+                            500: '#0c96e6',
+                            600: '#0078c9',
+                            700: '#0061a3',
+                            800: '#045286',
+                            900: '#0a4570',
+                        },
+                        secondary: {
+                            50: '#f5f7fa',
+                            100: '#ebeef5',
+                            200: '#d2d9e7',
+                            300: '#aab7d4',
+                            400: '#7c8db8',
+                            500: '#5d6c9f',
+                            600: '#4c5888',
+                            700: '#404972',
+                            800: '#383e60',
+                            900: '#2f3351',
+                        },
+                        accent: {
+                            500: '#8b5cf6',
+                        },
+                        success: {
+                            500: '#22c55e',
+                        },
+                        warning: {
+                            500: '#eab308',
+                        },
+                        error: {
+                            500: '#f43f5e',
+                        },
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-in-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+
+        [x-cloak] {
+            display: none !important;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0078c9 0%, #8b5cf6 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    {% block head %}{% endblock %}
+</head>
+
+<body class="min-h-screen flex flex-col font-sans text-gray-800 bg-gray-50">
+    <nav class="bg-white border-b border-gray-100 shadow-sm sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <a href="/" class="flex-shrink-0 flex items-center">
+                        <svg class="h-10 w-10 text-primary-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                            <path d="M3.22 12H9.5l.5-1 .5 1h6.28"></path>
+                        </svg>
+                        <div class="ml-3">
+                            <span class="font-heading text-2xl font-bold text-primary-700">HealthSense</span>
+                            <p class="text-xs text-gray-500 -mt-1">Intelligent Health Analysis</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center space-x-2">
+                    <a href="/"
+                        class="px-4 py-2 rounded-full text-sm font-medium {% if request.path == '/' %}text-white bg-primary-600{% else %}text-gray-700 hover:bg-gray-100{% endif %} transition duration-200">Home</a>
+                    <a href="/predict"
+                        class="px-4 py-2 rounded-full text-sm font-medium {% if request.path == '/predict' %}text-white bg-primary-600{% else %}text-gray-700 hover:bg-gray-100{% endif %} transition duration-200">Analyze</a>
+                    <a href="/about"
+                        class="px-4 py-2 rounded-full text-sm font-medium {% if request.path == '/about' %}text-white bg-primary-600{% else %}text-gray-700 hover:bg-gray-100{% endif %} transition duration-200">About</a>
+                </div>
+                <div class="sm:hidden flex items-center">
+                    <button type="button"
+                        class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+                        aria-controls="mobile-menu" aria-expanded="false" x-data="{open: false}" @click="open = !open">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" x-show="!open" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="h-6 w-6" x-show="open" x-cloak xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sm:hidden" id="mobile-menu" x-data="{open: false}" x-show="open" x-cloak>
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/"
+                    class="block px-3 py-2 rounded-md text-base font-medium {% if request.path == '/' %}text-white bg-primary-600{% else %}text-gray-700 hover:bg-gray-100{% endif %} transition duration-150">Home</a>
+                <a href="/predict"
+                    class="block px-3 py-2 rounded-md text-base font-medium {% if request.path == '/predict' %}text-white bg-primary-600{% else %}text-gray-700 hover:bg-gray-100{% endif %} transition duration-150">Analyze</a>
+                <a href="/about"
+                    class="block px-3 py-2 rounded-md text-base font-medium {% if request.path == '/about' %}text-white bg-primary-600{% else %}text-gray-700 hover:bg-gray-100{% endif %} transition duration-150">About</a>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="gradient-bg text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:justify-between">
+                <div class="mb-8 md:mb-0 md:w-1/3">
+                    <a href="/" class="flex items-center">
+                        <svg class="h-10 w-10 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                            <path d="M3.22 12H9.5l.5-1 .5 1h6.28"></path>
+                        </svg>
+                        <div class="ml-3">
+                            <span class="font-heading text-2xl font-bold text-white">HealthSense</span>
+                            <p class="text-xs text-gray-200">Intelligent Health Analysis</p>
+                        </div>
+                    </a>
+                    <p class="mt-4 text-base text-gray-200 leading-relaxed">Using advanced machine learning to provide insightful health predictions and analysis, helping you take control of your wellbeing journey.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 md:w-2/3 md:pl-12">
+                    <div>
+                        <h2 class="mb-6 text-sm font-heading font-bold uppercase tracking-wider text-white">Navigation</h2>
+                        <ul class="text-gray-200 space-y-4">
+                            <li><a href="/" class="hover:text-white transition duration-150 flex items-center">
+                                <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>Home</a>
+                            </li>
+                            <li><a href="/predict" class="hover:text-white transition duration-150 flex items-center">
+                                <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                                    <polyline points="14 2 14 8 20 8"></polyline>
+                                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                                    <line x1="10" y1="9" x2="8" y2="9"></line>
+                                </svg>Analyze</a>
+                            </li>
+                            <li><a href="/about" class="hover:text-white transition duration-150 flex items-center">
+                                <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>About</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-heading font-bold uppercase tracking-wider text-white">Connect</h2>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-200 hover:text-white transition duration-150 bg-white/10 p-3 rounded-full">
+                                <span class="sr-only">GitHub</span>
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-200 hover:text-white transition duration-150 bg-white/10 p-3 rounded-full">
+                                <span class="sr-only">LinkedIn</span>
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                                    </path>
+                                </svg>
+                            </a>
+                            <a href="#" class="text-gray-200 hover:text-white transition duration-150 bg-white/10 p-3 rounded-full">
+                                <span class="sr-only">Twitter</span>
+                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path 
+                                        d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="mt-8">
+                            <h2 class="mb-6 text-sm font-heading font-bold uppercase tracking-wider text-white">Contact Us</h2>
+                            <a href="mailto:info@healthsense.io" class="text-gray-200 hover:text-white transition duration-150 flex items-center mb-3">
+                                <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                                info@healthsense.io
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-8 border-white/20">
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-gray-200">© 2025 HealthSense. All Rights Reserved.</span>
+                <div class="flex mt-4 space-x-6 sm:mt-0">
+                    <a href="#" class="text-sm text-gray-200 hover:text-white">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-200 hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
