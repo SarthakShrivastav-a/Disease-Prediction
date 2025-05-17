@@ -1,0 +1,228 @@
+{% extends "base.html" %}
+
+{% block title %}HealthSense - Smart Health Analysis Platform{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-tr from-primary-800 via-primary-700 to-accent-500 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+            <defs>
+                <pattern id="dotPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="10" cy="10" r="1.5" fill="#fff"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dotPattern)"/>
+        </svg>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-28 relative">
+        <div class="md:flex md:items-center md:justify-between">
+            <div class="md:w-1/2 animate-slide-up">
+                <span class="inline-block bg-white/20 text-white px-4 py-1 rounded-full text-sm font-medium mb-5">Powered by Advanced AI</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold leading-tight mb-6">Your Personal Health Companion</h1>
+                <p class="text-xl mb-8 text-white/90 font-light">Gain valuable insights into your health with our AI-driven analysis. Identify potential concerns before they become serious problems.</p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="/predict"
+                        class="bg-white text-primary-700 hover:bg-primary-50 font-medium py-3 px-8 rounded-full shadow-lg inline-flex items-center transition duration-200 hover:shadow-xl">
+                        Start Analysis
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="/about"
+                        class="bg-transparent border border-white/50 text-white hover:bg-white/10 font-medium py-3 px-8 rounded-full inline-flex items-center transition duration-200">
+                        Learn More
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center text-white/80 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    Trusted by healthcare professionals worldwide
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center">
+                <div class="relative">
+                    <div class="absolute -top-6 -left-6 w-24 h-24 bg-accent-500 rounded-full opacity-20 animate-pulse-slow"></div>
+                    <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-secondary-500 rounded-full opacity-20 animate-pulse-slow"></div>
+                    <img src="/api/placeholder/600/400" alt="Health monitoring illustration" class="rounded-2xl shadow-2xl mx-auto w-full max-w-lg z-10 relative animate-fade-in">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <span class="inline-block bg-primary-100 text-primary-800 px-4 py-1 rounded-full text-sm font-medium mb-4">How It Works</span>
+            <h2 class="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-4">Intelligent Health Analysis in Three Steps</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">Our platform uses sophisticated algorithms and machine learning to provide personalized health insights based on your specific symptoms.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10">
+            <!-- Feature 1 -->
+            <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-primary-50 rounded-bl-3xl -mr-6 -mt-6 z-0"></div>
+                <div class="relative z-10">
+                    <div class="w-14 h-14 bg-primary-600 rounded-2xl flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-7 h-7 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 font-heading">Share Your Symptoms</h3>
+                    <p class="text-gray-600 mb-6">Select from our comprehensive database of symptoms to build an accurate profile of what you're experiencing.</p>
+                    <span class="inline-block bg-primary-50 text-primary-700 rounded-full text-sm font-medium px-3 py-1">Step 1</span>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-secondary-50 rounded-bl-3xl -mr-6 -mt-6 z-0"></div>
+                <div class="relative z-10">
+                    <div class="w-14 h-14 bg-secondary-600 rounded-2xl flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-7 h-7 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 font-heading">Advanced AI Analysis</h3>
+                    <p class="text-gray-600 mb-6">Our sophisticated algorithm analyzes your symptom patterns to identify potential health conditions with high accuracy.</p>
+                    <span class="inline-block bg-secondary-50 text-secondary-700 rounded-full text-sm font-medium px-3 py-1">Step 2</span>
+                </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 card-hover relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-20 h-20 bg-accent-50 rounded-bl-3xl -mr-6 -mt-6 z-0"></div>
+                <div class="relative z-10">
+                    <div class="w-14 h-14 bg-accent-500 rounded-2xl flex items-center justify-center mb-6 shadow-md">
+                        <svg class="w-7 h-7 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900 font-heading">Receive Personalized Insights</h3>
+                    <p class="text-gray-600 mb-6">Get detailed information about potential conditions and actionable recommendations for your next steps.</p>
+                    <span class="inline-block bg-accent-50 text-accent-500 rounded-full text-sm font-medium px-3 py-1">Step 3</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-16">
+            <a href="/predict" class="inline-flex items-center bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-8 rounded-full shadow-lg transition duration-200">
+                Start Your Analysis
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="md:flex md:items-center md:justify-between">
+            <div class="md:w-1/2 pr-0 md:pr-12 mb-10 md:mb-0">
+                <span class="inline-block bg-secondary-100 text-secondary-800 px-4 py-1 rounded-full text-sm font-medium mb-4">Why Choose HealthSense</span>
+                <h2 class="text-3xl md:text-4xl font-bold font-heading text-gray-900 mb-6">Proactive Health Management Starts Here</h2>
+                <p class="text-lg text-gray-600 mb-8">Our platform empowers you to take control of your health journey through early awareness and informed decision-making.</p>
+                
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-100 flex items-center justify-center mt-1">
+                            <svg class="h-4 w-4 text-primary-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <p class="ml-3 text-lg text-gray-600">Evidence-based algorithm trained on extensive medical data</p>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-100 flex items-center justify-center mt-1">
+                            <svg class="h-4 w-4 text-primary-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <p class="ml-3 text-lg text-gray-600">Regularly updated with the latest medical research</p>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="flex-shrink-0 h-6 w-6 rounded-full bg-primary-100 flex items-center justify-center mt-1">
+                            <svg class="h-4 w-4 text-primary-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                        </div>
+                        <p class="ml-3 text-lg text-gray-600">Privacy-focused design with secure data handling</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="md:w-1/2">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-xl font-bold text-gray-900 font-heading">Need immediate help?</h3>
+                                <p class="text-gray-600">Connect with healthcare professionals</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-gray-50 rounded-xl p-4 flex items-start">
+                                <div class="flex-shrink-0 text-primary-600 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="text-base font-semibold text-gray-900">24/7 Health Hotline</h4>
+                                    <p class="text-sm text-gray-600">Our health professionals are always available to help you with any questions or concerns.</p>
+                                </div>
+                            </div>
+                            <div class="bg-gray-50 rounded-xl p-4 flex items-start">
+                                <div class="flex-shrink-0 text-primary-600 mt-1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                                    </svg>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="text-base font-semibold text-gray-900">Online Consultation</h4>
+                                    <p class="text-sm text-gray-600">Connect with a healthcare professional via video call for personalized advice.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Disclaimer -->
+<section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-secondary-50 rounded-2xl shadow-md p-8 border-l-4 border-warning-500">
+            <div class="flex items-start">
+                <div class="flex-shrink-0">
+                    <svg class="h-6 w-6 text-warning-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-xl font-semibold mb-2 text-gray-900 font-heading">Important Health Notice</h3>
+                    <p class="text-gray-700">HealthSense is designed to provide information and is not a substitute for professional medical advice, diagnosis, or treatment. Always consult with qualified healthcare providers regarding any medical concerns or conditions you may have.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
