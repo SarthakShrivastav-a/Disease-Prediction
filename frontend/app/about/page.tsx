@@ -8,7 +8,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden py-12 md:py-16">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 -z-10" />
         <div className="container px-4 md:px-6 text-center">
-          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About MediScan</h1>
+          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Nirogya</h1>
           <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground md:text-xl">
             Learn about our mission to make healthcare more accessible through technology
           </p>
@@ -19,38 +19,36 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto">
           <Card className="overflow-hidden">
             <div className="md:flex">
-              <div className="md:w-1/3 bg-gradient-to-br from-primary to-accent">
+              <div className="md:w-1/2 bg-gradient-to-br from-primary to-accent">
                 <div className="h-full flex items-center justify-center p-8">
-                  <div className="relative w-48 h-48">
-                    <Image
-                      src="/placeholder.svg?height=200&width=200"
-                      alt="Developer Portrait"
-                      width={200}
-                      height={200}
-                      className="rounded-full object-cover border-4 border-white shadow-lg"
-                    />
-                  </div>
+                  <div className="relative w-full h-full">
+  <Image
+    src="/image.jpg"
+    alt="Sarthak Shrivastava"
+    fill
+    className="rounded-full object-cover w-full h-full border-4 border-white shadow-lg"
+  />
+</div>
+
                 </div>
               </div>
               <div className="md:w-2/3 p-8 md:p-12">
                 <h2 className="text-2xl font-bold mb-4">About the Developer</h2>
                 <p className="text-muted-foreground mb-6">
-                  Hi, I'm Jane Doe, a passionate medical data scientist dedicated to improving healthcare accessibility
-                  through technology. With a background in both computer science and biochemistry, I'm uniquely
-                  positioned to bridge the gap between medical knowledge and technological innovation.
+                  Hi, I'm Sarthak Shrivastava, a software developer excelling at creating distributed systems. This is my first try at AI/ML as I believe in growing continuously. I'm currently in my sophomore year and love to participate in hackathons and forming communities to foster development.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  I developed MediScan to help people gain better insights into potential health conditions based on
+                  I developed Nirogya to help people gain better insights into potential health conditions based on
                   their symptoms. Early detection and awareness can dramatically improve health outcomes, and I believe
                   AI has a crucial role to play in democratizing access to medical knowledge.
                 </p>
 
                 <div className="flex items-center space-x-4">
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a href="https://github.com/SarthakShrivastav-a" className="text-muted-foreground hover:text-primary transition-colors">
                     <Github className="h-6 w-6" />
                     <span className="sr-only">GitHub</span>
                   </a>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a href="https://www.linkedin.com/in/sarthak-shrivastava-45b678297/" className="text-muted-foreground hover:text-primary transition-colors">
                     <Linkedin className="h-6 w-6" />
                     <span className="sr-only">LinkedIn</span>
                   </a>
@@ -144,7 +142,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl font-bold mb-2">Important Health Notice</h3>
                 <p className="text-muted-foreground">
-                  MediScan is designed to provide information and is not a substitute for professional medical advice,
+                  Nirogya is designed to provide information and is not a substitute for professional medical advice,
                   diagnosis, or treatment. Always consult with qualified healthcare providers regarding any medical
                   concerns or conditions you may have.
                 </p>

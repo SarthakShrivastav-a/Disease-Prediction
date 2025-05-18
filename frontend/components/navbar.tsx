@@ -15,7 +15,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <Link href="/" className="flex items-center gap-2">
             <Activity className="h-6 w-6 text-primary" />
-            <span className="text-xl font-bold">MediScan</span>
+            <span className="text-xl font-bold">Nirogya</span>
           </Link>
         </div>
 

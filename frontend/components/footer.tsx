@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Activity className="h-6 w-6 text-primary" />
-              <span className="text-xl font-bold">MediScan</span>
+              <span className="text-xl font-bold">Nirogya</span>
             </Link>
             <p className="text-muted-foreground max-w-md">
               Using advanced AI technology to provide personalized health insights and analysis, helping you make
@@ -20,11 +20,11 @@ export default function Footer() {
                 <Twitter className="h-5 w-5" />
                 <span className="sr-only">Twitter</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link href="https://github.com/SarthakShrivastav-a" className="text-muted-foreground hover:text-primary transition-colors">
                 <Github className="h-5 w-5" />
                 <span className="sr-only">GitHub</span>
               </Link>
-              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link href="https://www.linkedin.com/in/sarthak-shrivastava-45b678297/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
               </Link>
@@ -57,8 +57,8 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <a href="mailto:info@mediscan.io" className="hover:text-primary transition-colors">
-                  info@mediscan.io
+                <a href="mailto:info@Nirogya.io" className="hover:text-primary transition-colors">
+                  info@Nirogya.io
                 </a>
               </li>
             </ul>
@@ -82,7 +82,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-6 border-t">
           <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} MediScan. All rights reserved.
+            Nirogya
           </p>
         </div>
       </div>

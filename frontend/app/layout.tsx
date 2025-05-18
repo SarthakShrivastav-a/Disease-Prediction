@@ -9,7 +9,7 @@ import Footer from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "MediScan - AI-Powered Health Analysis",
+  title: "Nirogya - AI-Powered Health Analysis",
   description: "Get personalized health insights with our advanced AI analysis platform",
     generator: 'v0.dev'
 }

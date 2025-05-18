@@ -44,7 +44,7 @@ export default function Home() {
               <div className="absolute -bottom-8 -right-8 w-32 h-32 bg-primary/20 rounded-full animate-pulse-slow"></div>
               <div className="relative bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden animate-float">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="/LP.jpeg"
                   alt="Health monitoring illustration"
                   width={600}
                   height={400}
@@ -139,7 +139,7 @@ export default function Home() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div>
               <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary mb-2">
-                Why Choose MediScan
+                Why Choose Nirogya
               </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
                 Proactive Health Management Starts Here
@@ -245,7 +245,7 @@ export default function Home() {
           <div className="inline-block rounded-lg bg-primary/10 px-3 py-1 text-sm text-primary mb-2">Powered By</div>
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Cutting-Edge Technologies</h2>
           <p className="mx-auto mt-4 max-w-[700px] text-muted-foreground">
-            MediScan combines the latest in web development and machine learning to deliver accurate health insights.
+            Nirogya combines the latest in web development and machine learning to deliver accurate health insights.
           </p>
         </div>
 
@@ -327,7 +327,7 @@ export default function Home() {
             <div>
               <h3 className="text-xl font-bold mb-2">Important Health Notice</h3>
               <p className="text-muted-foreground">
-                MediScan is designed to provide information and is not a substitute for professional medical advice,
+                Nirogya is designed to provide information and is not a substitute for professional medical advice,
                 diagnosis, or treatment. Always consult with qualified healthcare providers regarding any medical
                 concerns or conditions you may have.
               </p>
